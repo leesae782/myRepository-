@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    
+</style>
+<body>
+    <h1>로또 번호 추천 만들기...</h1>
+    <button id="rulletbtn">추첨하기</button>
+    <p id ="console"></p>
+    <div id ="wrapper">
+        
+    </div>
+
+    <script>
+       document.querySelector("#rulletbtn").addEventListener("click",function(){
+        var nums = [];
+        
+        
+        // for(i=0;i<6;i++){
+        //     nums[i]=parseInt(Math.random()*45)+1;
+        //     document.querySelector("#console").innerText = nums
+        // }
+        
+    //    for(i=0;i<6;i++){ 
+    //     let lottoNum=parseInt(Math.random()*45)+1;
+    //     //만일 중복된 값이 없을때
+    //     if(nums.indexOf(lottoNum) ==-1){
+    //     //배열에 로또번호를 넣어준다.
+    //     nums.push(lottoNum);
+    //     }
+    //     document.querySelector("#console").innerText = nums
+    //     }
+        //그런데 로또번호는  6개가 나와야한다. 
+       
+       //p요소에 문자열은 어떻게 출력하지?
+      while(true){
+        let lottoNum=parseInt(Math.random()*45)+1;
+        //만일 중복된 값이 없을때
+        if(nums.indexOf(lottoNum) ==-1){
+        //배열에 로또번호를 넣어준다.
+        nums.push(lottoNum);
+        }
+        //만일 nums 에 6개의 숫자가 모두 들어갔다면 반복문 탈출
+        if(nums.length==7){
+        break;
+        }
+        document.querySelector("#console").innerText = nums
+        
+        
+      }
+
+      // nums 배열에 있는 숫자를 이용해서 img요소만들기
+      for(i=0;i<6;i++){
+      let ball = document.createElement("img");
+        ball.setAttribute("src","images/lotto-ball-"+nums[i]+".png")
+        document.querySelector("#wrapper").append(ball);
+      }
+       })
+       
+      
+    </script>
+</body>
+</html>
