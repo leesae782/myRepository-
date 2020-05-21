@@ -6,7 +6,10 @@
     <title>Document</title>
 </head>
 <style>
-    
+    img {
+        width: 50px;
+        height: 50px;
+    }
 </style>
 <body>
     <h1>로또 번호 추천 만들기...</h1>
@@ -17,7 +20,11 @@
     </div>
 
     <script>
+      
        document.querySelector("#rulletbtn").addEventListener("click",function(){
+
+        //div 안을 빈상태로 만들기;
+        document.querySelector("#wrapper").innerText = ""
         var nums = [];
         
         
@@ -49,6 +56,9 @@
         if(nums.length==7){
         break;
         }
+
+        nums.sort(function(a,b){
+        return a-b ;})
         document.querySelector("#console").innerText = nums
         
         
@@ -60,7 +70,10 @@
         ball.setAttribute("src","images/lotto-ball-"+nums[i]+".png")
         document.querySelector("#wrapper").append(ball);
       }
-       })
+      
+      
+       });
+       
        
       
     </script>
