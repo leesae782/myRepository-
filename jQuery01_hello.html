@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery01_hello.html</title>
+</head>
+<body>
+    <button id = "changeBtn">change!</button>
+    <button id="changeBtn2">jQuery로 change!</button>
+    <p id = "one">p1</p>
+    <p id = "two">p2</p>
+    <script src="js/my_util.js"></script>
+    
+    <!-- jQuery 로딩하기 -->
+    <script src="js/jquery-3.5.1.js"></script>  
+    
+    <script>
+        select("#changeBtn").
+        addEventListener("click",function(){
+            select("#one").innerText="김구라";
+            select("#two").innerText="해골";
+        });
+
+        //jquery 를 활용해서 버튼을 click했을때 실행할 함수 등록
+        //함수이름이 $ 인것을 호출
+        $("#changeBtn2").on("click",function(){
+            //jQuery 를 활용해서 innerText 넣어주기
+            $("#one").text("원숭이");
+            $("#two").text("주뎅이");
+        });
+        
+    </script>
+</body>
+</html>
