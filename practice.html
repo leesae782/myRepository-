@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <h1>연습을 해보자.</h1>
+
+    <input id="inputid"type="text">
+    <button id="buttonid">확인</button>
+    <ul>
+        <li id ="liid">안녕하세요</li>
+    </ul>
+    <script>
+        var inputid = document.querySelector("#inputid")
+        var liid = document.querySelector("#liid")
+        var buttonid = document.querySelector("#buttonid")
+
+        
+
+       
+
+        buttonid.addEventListener("click",function(){
+            var createli = document.createElement("li");
+            createli.setAttribute("id","liid2");
+            document.querySelector("ul").append(createli);
+            
+            liid.innerText = inputid.value;
+            liid2.innerText = inputid.value;
+        });
+    </script>
+
+
+    <h1>두번쨰 연습입니다.</h1>
+
+
+    <ul>
+        <li class ="li-class">김구라</li>
+        <li class ="li-class">해골</li>
+        <li class ="li-class">원숭이</li>
+        <li class ="li-class">주뎅이</li>
+        <li class ="li-class">덩어리</li>
+    </ul>
+    
+    <input id="ip1" type="text">
+    <button id = "btn1">클릭</button>
+    <br>
+    <button id="changebtn">클릭</button>
+
+    <script>
+        var ip1 = document.querySelector("#ip1");
+        var btn1 =document.querySelector("#btn1");
+        var arr1=[];
+        btn1.addEventListener("click",function(){
+            
+            arr1.push(ip1.value);
+
+            console.log(arr1);
+        });
+
+        var changebtn =document.querySelector("#changebtn");
+        changebtn.addEventListener("click",function(){
+           for(i=0;i<arr1.length;i++){
+            document.querySelectorAll(".li-class")[i].innerText= arr1[i];
+           }
+            
+        });
+    </script>
+    
+
+</body>
+</html>
